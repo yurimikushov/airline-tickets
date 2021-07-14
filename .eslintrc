@@ -1,0 +1,21 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "rules": {
+    "semi": "off",
+    "@typescript-eslint/semi": ["off"],
+    "@typescript-eslint/no-empty-interface": [
+      "error",
+      {
+        "allowSingleExtends": true
+      }
+    ]
+  },
+  "extends": [
+    "react-app",
+    "react-app/jest"
+  ]
+}
