@@ -3,3 +3,18 @@
   margin: 0;
   padding: 0;
 }
+
+:root {
+  --color-primary: #2196f3;
+  --color-white: #fff;
+  --color-black: #4a4a4a;
+  --color-gray-light: #e5e5e5;
+  --color-gray: #a0b0b9;
+  --font-size: 1em;
+}
+
+body {
+  background-color: var(--color-gray-light);
+
+  font-size: var(--font-size);
+}
