@@ -15,6 +15,7 @@
 }
 
 body {
+  color: var(--color-black);
   background-color: var(--color-gray-light);
 
   font-size: var(--font-size);
