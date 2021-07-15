@@ -21,51 +21,6 @@
   height: 36px;
 }
 
-.ticket__header + .ticket__body {
+.ticket__header + .ticket__segments {
   margin-top: 1.25rem;
-}
-
-.ticket__flight {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-}
-
-.ticket__flight + .ticket__flight {
-  margin-top: 0.625rem;
-}
-
-.ticket__route-name,
-.ticket__duration-label,
-.ticket__stops-label {
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-
-  color: var(--color-gray-3);
-
-  font-size: 0.75rem;
-  font-weight: 600;
-  font-style: normal;
-  line-height: 1.125rem;
-}
-
-.ticket__route-time,
-.ticket__duration-value,
-.ticket__stops-cites {
-  font-size: 0.875rem;
-  font-weight: 600;
-  line-height: 1.3125rem;
-}
-
-.ticket__stops ul {
-  display: flex;
-
-  list-style: none;
-}
-
-.ticket__stops ul li::after {
-  content: ',\00a0';
-}
-
-.ticket__stops ul li:last-child::after {
-  content: '';
 }
