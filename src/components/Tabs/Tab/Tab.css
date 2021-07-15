@@ -18,6 +18,8 @@
 
   padding: 0.9375rem;
 
+  cursor: pointer;
+
   transition: background-color 0.2s;
 
   text-align: center;
