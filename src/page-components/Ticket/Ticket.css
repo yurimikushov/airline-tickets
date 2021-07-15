@@ -10,6 +10,10 @@
 
 .ticket__price {
   color: var(--color-primary);
+
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.5rem;
 }
 
 .ticket__airline-logo {
@@ -28,6 +32,28 @@
 
 .ticket__flight + .ticket__flight {
   margin-top: 0.625rem;
+}
+
+.ticket__route-name,
+.ticket__duration-label,
+.ticket__stops-label {
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+
+  color: var(--color-gray-3);
+
+  font-size: 0.75rem;
+  font-weight: 600;
+  font-style: normal;
+  line-height: 1.125rem;
+}
+
+.ticket__route-time,
+.ticket__duration-value,
+.ticket__stops-cites {
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.3125rem;
 }
 
 .ticket__stops ul {
