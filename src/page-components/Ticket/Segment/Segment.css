@@ -1,0 +1,44 @@
+.ticket-segment {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.ticket-segment + .ticket-segment {
+  margin-top: 0.625rem;
+}
+
+.ticket-segment__route-name,
+.ticket-segment__duration-label,
+.ticket-segment__stops-label {
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+
+  color: var(--color-gray-3);
+
+  font-size: 0.75rem;
+  font-weight: 600;
+  font-style: normal;
+  line-height: 1.125rem;
+}
+
+.ticket-segment__route-time,
+.ticket-segment__duration-value,
+.ticket-segment__stops-cites {
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.3125rem;
+}
+
+.ticket-segment__stops ul {
+  display: flex;
+
+  list-style: none;
+}
+
+.ticket-segment__stops ul li::after {
+  content: ',\00a0';
+}
+
+.ticket-segment__stops ul li:last-child::after {
+  content: '';
+}

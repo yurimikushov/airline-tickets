@@ -22,4 +22,4 @@ interface TicketProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, 
   segments: ISegment[]
 }
 
-export type { TicketProps }
+export type { TicketProps, ISegment }
