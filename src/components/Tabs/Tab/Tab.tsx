@@ -3,7 +3,7 @@ import { nanoid } from 'nanoid'
 import { TabProps } from './Tab.props'
 import './Tab.css'
 
-const Tab = ({ title, checked, onSwitch }: TabProps) => {
+const Tab = ({ title, checked, onSwitch }: TabProps): JSX.Element => {
   const id = useMemo(nanoid, [])
 
   return (

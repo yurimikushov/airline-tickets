@@ -106,7 +106,7 @@ const tickets = [
   },
 ]
 
-const App = () => {
+const App = (): JSX.Element => {
   const [tabs, setTabs] = useState([
     { title: 'Самый дешевый', checked: false },
     { title: 'Самый быстрый', checked: false },

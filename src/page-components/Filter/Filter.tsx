@@ -7,7 +7,7 @@ interface IFilter {
   checked: boolean
 }
 
-const Filter = () => {
+const Filter = (): JSX.Element => {
   const [filter, setFilter] = useState<IFilter[]>([
     { title: 'Все', checked: false },
     { title: 'Без пересадок', checked: true },
