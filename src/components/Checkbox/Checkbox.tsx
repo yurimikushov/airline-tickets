@@ -8,7 +8,7 @@ const Checkbox = ({
   title,
   onChange,
   ...props
-}: CheckboxProps) => (
+}: CheckboxProps): JSX.Element => (
   // FIXME: should remove double handling `on change` event
   <div className={cn(className, 'checkbox')} onClick={onChange} {...props}>
     <label className='checkbox__label'>

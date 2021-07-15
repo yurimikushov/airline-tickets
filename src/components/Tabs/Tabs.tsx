@@ -3,7 +3,12 @@ import { Tab } from './Tab/Tab'
 import { TabsProps } from './Tabs.props'
 import './Tabs.css'
 
-const Tabs = ({ className, tabs, onSwitch, ...props }: TabsProps) => (
+const Tabs = ({
+  className,
+  tabs,
+  onSwitch,
+  ...props
+}: TabsProps): JSX.Element => (
   <div className={cn(className, 'tabs')} {...props}>
     {tabs.map(({ title, checked }) => (
       <Tab
