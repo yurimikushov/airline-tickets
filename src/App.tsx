@@ -50,7 +50,7 @@ const App = (): JSX.Element => {
       <main>
         <Tabs tabs={tabs} onSwitch={onSwitchHandler} />
         {tickets &&
-          tickets.map((ticket) => <Ticket key={Math.random()} {...ticket} />)}
+          tickets.map((ticket) => <Ticket key={ticket.id} {...ticket} />)}
         <Button onClick={() => console.log('Click')}>
           Показать еще 5 билетов!
         </Button>

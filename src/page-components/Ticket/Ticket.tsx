@@ -17,7 +17,7 @@ const Ticket = ({
       </div>
       <div className='ticket__segments'>
         {segments.map((segment) => (
-          <Segment key={Math.random()} {...segment} />
+          <Segment key={segment.id} {...segment} />
         ))}
       </div>
     </div>
