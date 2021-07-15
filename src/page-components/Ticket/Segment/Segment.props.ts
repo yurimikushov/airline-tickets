@@ -1,5 +1,5 @@
 import { DetailedHTMLProps, HTMLAttributes } from 'react'
-import { ISegment } from '../Ticket.props'
+import { ISegment } from '../../../interfaces'
 
 type SegmentProps = ISegment & DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>
 
