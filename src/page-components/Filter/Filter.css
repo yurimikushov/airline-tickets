@@ -1,0 +1,26 @@
+.filter {
+  padding-top: 0.625rem;
+  padding-bottom: 0.625rem;
+}
+
+.filter__title {
+  padding: 0.625rem 1.25rem 0.625rem;
+
+  text-transform: uppercase;
+
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 0.75rem;
+}
+
+.filter__item {
+  padding: 0.625rem 1.25rem;
+
+  transition: background-color 0.2s;
+
+  background-color: var(--color-white);
+}
+
+.filter__item:hover {
+  background-color: var(--color-white-hover);
+}

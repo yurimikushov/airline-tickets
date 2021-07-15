@@ -1,9 +1,9 @@
 import { useState } from 'react'
-import { Button, Card, Checkbox, Tabs } from './components'
+import { Button, Card, Tabs } from './components'
+import { Filter } from './page-components'
 import './App.css'
 
 const App = () => {
-  const [checked, setChecked] = useState<boolean>(false)
   const [tabs, setTabs] = useState([
     { title: 'Самый дешевый', checked: false },
     { title: 'Самый быстрый', checked: false },
@@ -22,25 +22,7 @@ const App = () => {
     <div className='container'>
       <div className='logo'>Logo</div>
       <aside>
-        <Card>
-          <div className='filter' style={{ width: '232px', height: '252px' }}>
-            <div>Количество пересадок</div>
-            <Checkbox
-              title='Все'
-              checked={checked}
-              onChange={() => {
-                setChecked((checked) => !checked)
-              }}
-            />
-            <Checkbox
-              title='Без пересадок'
-              checked={checked}
-              onChange={() => {
-                setChecked((checked) => !checked)
-              }}
-            />
-          </div>
-        </Card>
+        <Filter />
       </aside>
       <main>
         <Tabs tabs={tabs} onSwitch={onSwitchHandler} />
