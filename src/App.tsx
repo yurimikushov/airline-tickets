@@ -1,29 +1,17 @@
 import { useEffect, useState } from 'react'
-import { fetchSearchId, fetchTickets } from './api'
-import { ITicket } from './interfaces'
+import { useSelector, useDispatch } from 'react-redux'
+import { IState, fetchTickets } from './store'
 import { Button, Tabs } from './components'
 import { Filter, Ticket } from './page-components'
 import './App.css'
 
 const App = (): JSX.Element => {
-  const [searchId, setSearchId] = useState<string>('')
-  const [tickets, setTickets] = useState<ITicket[]>([])
+  const tickets = useSelector((state: IState) => state.tickets)
+  const dispatch = useDispatch()
 
   useEffect(() => {
-    fetchSearchId()
-      .then((searchId) => setSearchId(searchId))
-      .catch((err) => console.error(err))
-  }, [])
-
-  useEffect(() => {
-    if (searchId.trim() === '') {
-      return
-    }
-
-    fetchTickets(searchId)
-      .then((tickets) => setTickets(tickets))
-      .catch((err) => console.error(err))
-  }, [searchId])
+    dispatch(fetchTickets())
+  }, [dispatch])
 
   const [tabs, setTabs] = useState([
     { title: 'Самый дешевый', checked: false },
@@ -42,7 +30,7 @@ const App = (): JSX.Element => {
   return (
     <div className='container'>
       <div className='logo'>
-        <img src="/logo.png" alt='Логотип сайта.' />
+        <img src='/logo.png' alt='Логотип сайта.' />
       </div>
       <aside>
         <Filter />
