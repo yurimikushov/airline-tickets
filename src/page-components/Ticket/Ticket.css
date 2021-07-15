@@ -2,25 +2,6 @@
   padding: 1.25rem;
 }
 
-.ticket__header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.ticket__price {
-  color: var(--color-primary);
-
-  font-size: 1.5rem;
-  font-weight: 600;
-  line-height: 1.5rem;
-}
-
-.ticket__airline-logo {
-  width: 99px;
-  height: 36px;
-}
-
 .ticket__header + .ticket__segments {
   margin-top: 1.25rem;
 }
