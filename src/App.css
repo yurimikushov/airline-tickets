@@ -3,14 +3,22 @@
 
   justify-content: center;
 
-  margin: 3.125rem;
   grid-template-columns: minmax(auto, 232px) minmax(auto, 502px);
   gap: 1.25rem;
 }
 
 .logo {
+  margin-top: 3.125rem;
+  margin-bottom: calc(3.125rem - 1.25rem);
   justify-self: center;
   grid-column: 1 / -1;
+}
+
+.logo img {
+  display: block;
+
+  width: 60px;
+  height: 60px;
 }
 
 aside {
