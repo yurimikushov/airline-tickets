@@ -1,9 +1,11 @@
-.checkbox {
+.checkbox__label {
   position: relative;
 
   display: block;
 
   padding-left: 30px;
+
+  cursor: pointer;
 
   font-size: 0.8125rem;
   line-height: 1.25rem;
