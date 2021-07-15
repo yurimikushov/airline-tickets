@@ -1,4 +1,5 @@
 interface ISegment {
+  id: string
   // Код города (iata)
   origin: string
   // Код города (iata)

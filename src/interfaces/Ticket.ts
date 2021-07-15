@@ -1,6 +1,8 @@
 import { ISegment } from './Segment'
 
 interface ITicket {
+  id: string
+  // Цена в рублях
   price: number
   // Код авиакомпании (iata)
   carrier: string
