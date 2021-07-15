@@ -41,7 +41,9 @@ const App = (): JSX.Element => {
 
   return (
     <div className='container'>
-      <div className='logo'>Logo</div>
+      <div className='logo'>
+        <img src="/logo.png" alt='Логотип сайта.' />
+      </div>
       <aside>
         <Filter />
       </aside>
