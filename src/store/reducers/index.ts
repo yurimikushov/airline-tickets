@@ -1,3 +1,14 @@
-const rootReducer = (state: any) => state || { message: 'Hello, Redux!' }
+import { combineReducers } from 'redux'
+import { ITicket } from '../../interfaces'
+import { ticketsReducer } from './tickets'
 
-export default rootReducer
+interface IState {
+  tickets: ITicket[]
+}
+
+const rootReducer = combineReducers<IState>({
+  tickets: ticketsReducer,
+})
+
+export { rootReducer }
+export type { IState }
