@@ -3,6 +3,8 @@
 
   transition: background-color 0.2s;
 
+  letter-spacing: 0.5px;
+
   text-transform: uppercase;
 
   color: var(--color-white);
