@@ -1,12 +1,12 @@
 import { useEffect } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { fetchTickets } from '../store/actions'
-import { ticketsSelector } from '../store/selectors'
 import { Ticket } from '../page-components'
 import { Loader, Alert } from '../components'
+import { useTickets } from '../hooks'
 
 const Tickets = (): JSX.Element => {
-  const { isPending, tickets, error } = useSelector(ticketsSelector)
+  const { isPending, tickets, error } = useTickets()
   const dispatch = useDispatch()
 
   useEffect(() => {
