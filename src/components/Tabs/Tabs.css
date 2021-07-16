@@ -1,4 +1,4 @@
 .tabs {
-  display: flex;
-  flex: 33%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
