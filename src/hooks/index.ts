@@ -1,2 +1,2 @@
-export { useTicketsSort } from './useTicketsSort'
+export { useSort } from './useSort'
 export { useFilter } from './useFilter'

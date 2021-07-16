@@ -1,8 +1,8 @@
-import { useTicketsSort } from '../hooks'
+import { useSort } from '../hooks'
 import { Tabs } from '../components'
 
 const SortTickets = (): JSX.Element => {
-  const [sortTabs, onSortHandler] = useTicketsSort()
+  const [sortTabs, onSortHandler] = useSort()
 
   return <Tabs tabs={sortTabs} onSwitch={onSortHandler} />
 }
