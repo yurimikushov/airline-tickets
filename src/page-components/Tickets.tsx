@@ -15,10 +15,6 @@ const Tickets = (): JSX.Element => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  if (isPending) {
-    return <Loader />
-  }
-
   if (!isPending && error) {
     return <Alert>{error}</Alert>
   }
@@ -32,6 +28,7 @@ const Tickets = (): JSX.Element => {
       {tickets.map((ticket) => (
         <Ticket key={ticket.id} {...ticket} />
       ))}
+      {isPending && <Loader />}
     </>
   )
 }
