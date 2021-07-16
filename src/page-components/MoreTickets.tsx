@@ -1,9 +1,10 @@
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchTickets, IState } from '../store'
+import { fetchTickets } from '../store'
+import { ticketsSelector } from '../store/selectors'
 import { Button } from '../components'
 
 const MoreTickets = (): JSX.Element => {
-  const { tickets, isPending } = useSelector((state: IState) => state.tickets)
+  const { tickets, isPending } = useSelector(ticketsSelector)
 
   const dispatch = useDispatch()
 
