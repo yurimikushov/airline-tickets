@@ -1,10 +1,7 @@
 import { IFilter } from '../interfaces'
 
-const isAllFilter = (title: string, filters: IFilter[]): boolean => {
-  const allFilter = filters.find(({ title }) => title === 'Все')
-  const isAllFilter = title === allFilter?.title
-
-  return isAllFilter
+const isAllFilter = (filter: IFilter): boolean => {
+  return filter.value === -1
 }
 
 export { isAllFilter }

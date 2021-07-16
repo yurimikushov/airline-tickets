@@ -3,11 +3,11 @@ import { IUpdateAction } from '../actions'
 import { FILTER } from '../actionTypes'
 
 const initialState: IFilter[] = [
-  { title: 'Все', checked: false },
-  { title: 'Без пересадок', checked: true },
-  { title: '1 пересадка', checked: true },
-  { title: '2 пересадки', checked: false },
-  { title: '3 пересадки', checked: false },
+  { title: 'Все', value: -1, checked: false },
+  { title: 'Без пересадок', value: 0, checked: true },
+  { title: '1 пересадка', value: 1, checked: false },
+  { title: '2 пересадки', value: 2, checked: false },
+  { title: '3 пересадки', value: 3, checked: false },
 ]
 
 const filtersReducer = (
