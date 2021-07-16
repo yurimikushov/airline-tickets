@@ -1,28 +1,10 @@
-.checkbox__label {
+.checkbox {
   position: relative;
 
-  display: block;
-
-  padding-left: 30px;
-
-  cursor: pointer;
-
-  font-size: 0.8125rem;
-  line-height: 1.25rem;
-}
-
-.checkbox input {
-  position: absolute;
-
-  width: 0;
-  height: 0;
+  display: flex;
 }
 
 .checkbox__box {
-  position: absolute;
-  top: 0;
-  left: 0;
-
   width: 20px;
   height: 20px;
 
@@ -30,16 +12,27 @@
   border-radius: 2px;
 }
 
-.checkbox,
-.checkbox__box {
+.checkbox__label {
+  font-size: 0.8125rem;
+  line-height: 1.25rem;
+}
+
+.checkbox__box,
+.checkbox__label {
   cursor: pointer;
 }
 
-.checkbox input:checked + .checkbox__box {
+.checkbox__box + .checkbox__label {
+  padding-left: 0.5rem;
+}
+
+.checkbox__box_checked {
+  position: relative;
+
   border: 1px solid var(--color-primary);
 }
 
-.checkbox input:checked + .checkbox__box::after {
+.checkbox__box_checked::after {
   position: absolute;
 
   top: 1px;
