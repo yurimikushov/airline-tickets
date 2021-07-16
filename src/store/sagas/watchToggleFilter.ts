@@ -1,6 +1,6 @@
 import { call, put, select, takeEvery } from 'redux-saga/effects'
 import { IFilter } from '../../interfaces'
-import { isAllFilter } from '../../utils'
+import { isAllBasicFiltersChecked, isAllFilter } from '../../utils'
 import { IToggleAction, updateFilters } from '../actions'
 import { FILTER } from '../actionTypes'
 import { IState } from '../reducers'
@@ -20,29 +20,20 @@ function* handleToggleFilter({ payload }: IToggleAction) {
 }
 
 function* handleToggleAllFilter(allFilter: IFilter, filters: IFilter[]) {
-  const calcFilterChecked = (
-    allFilter: IFilter,
-    currentFilter: IFilter
-  ): boolean => {
-    if (!allFilter.checked) {
-      return true
-    }
-
-    return currentFilter.title === allFilter.title
-      ? !currentFilter.checked
-      : currentFilter.checked
-  }
-
   const toggleCurrentFilter = (filter: IFilter) => ({
     ...filter,
-    checked: allFilter ? calcFilterChecked(allFilter, filter) : filter.checked,
+    checked: !allFilter.checked,
   })
 
   yield put(updateFilters(filters.map(toggleCurrentFilter)))
 }
 
 function* handleToggleBasicFilter(currentFilter: IFilter, filters: IFilter[]) {
-  const calcFilterChecked = (filter: IFilter): boolean => {
+  const calcChecked = (filter: IFilter): boolean => {
+    if (isAllFilter(filter) && filter.checked) {
+      return false
+    }
+
     if (filter.value === currentFilter.value) {
       return !filter.checked
     }
@@ -52,10 +43,19 @@ function* handleToggleBasicFilter(currentFilter: IFilter, filters: IFilter[]) {
 
   const toggleCurrentFilter = (filter: IFilter) => ({
     ...filter,
-    checked: calcFilterChecked(filter),
+    checked: calcChecked(filter),
   })
 
-  yield put(updateFilters(filters.map(toggleCurrentFilter)))
+  let toggledFilters = filters.map(toggleCurrentFilter)
+
+  if (isAllBasicFiltersChecked(toggledFilters)) {
+    toggledFilters = toggledFilters.map((filter) => {
+      filter.checked = true
+      return filter
+    })
+  }
+
+  yield put(updateFilters(toggledFilters))
 }
 
 export { watchToggleFilter }
