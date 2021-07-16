@@ -5,7 +5,7 @@ interface ITicketSort {
   checked: boolean
 }
 
-const useTicketsSort = (): [ITicketSort[], (title: string) => void] => {
+const useSort = (): [ITicketSort[], (title: string) => void] => {
   const [sort, setSort] = useState([
     { title: 'Самый дешевый', checked: false },
     { title: 'Самый быстрый', checked: false },
@@ -23,4 +23,4 @@ const useTicketsSort = (): [ITicketSort[], (title: string) => void] => {
   return [sort, sortHandler]
 }
 
-export { useTicketsSort }
+export { useSort }
