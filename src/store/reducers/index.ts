@@ -13,4 +13,4 @@ const rootReducer = combineReducers({
 })
 
 export { rootReducer }
-export type { IState }
+export type { IState, ITicketsState }
