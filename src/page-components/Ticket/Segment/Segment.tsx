@@ -1,4 +1,4 @@
-import { flightDuration, minutesToHM } from '../../../utils'
+import { declOfNum, flightDuration, minutesToHM } from '../../../utils'
 import { SegmentProps } from './Segment.props'
 import './Segment.css'
 
@@ -27,7 +27,11 @@ const Segment = ({
     {stops.length > 0 ? (
       <div className='ticket-segment__stops'>
         <div className='ticket-segment__stops-label'>
-          {stops.length} пересадки
+          {`${stops.length} ${declOfNum(stops.length, [
+            'пересадка',
+            'пересадки',
+            'пересадок',
+          ])}`}
         </div>
         <ul className='ticket-segment__stops-cites'>
           {stops.map((stop) => (
