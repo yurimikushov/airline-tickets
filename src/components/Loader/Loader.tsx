@@ -4,7 +4,7 @@ import './Loader.css'
 
 const Loader = ({ className, ...props }: LoaderProps): JSX.Element => (
   <div className={cn(className, 'loader')} {...props}>
-    Loading...
+    Загрузка...
   </div>
 )
 
