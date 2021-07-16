@@ -3,7 +3,7 @@ import { fetchTickets, IState } from '../store'
 import { Button } from '../components'
 
 const MoreTickets = (): JSX.Element => {
-  const { tickets } = useSelector((state: IState) => state.tickets)
+  const { tickets, isPending } = useSelector((state: IState) => state.tickets)
 
   const dispatch = useDispatch()
 
@@ -15,7 +15,11 @@ const MoreTickets = (): JSX.Element => {
     dispatch(fetchTickets())
   }
 
-  return <Button onClick={onShowMoreTickets}>Показать еще 5 билетов!</Button>
+  return (
+    <Button onClick={onShowMoreTickets} pending={isPending}>
+      Показать еще 5 билетов!
+    </Button>
+  )
 }
 
 export { MoreTickets }
