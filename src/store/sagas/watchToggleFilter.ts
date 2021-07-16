@@ -1,7 +1,7 @@
 import { call, put, select, takeEvery } from 'redux-saga/effects'
 import { IFilter } from '../../interfaces'
 import { isAllFilter } from '../../utils'
-import { IToggleAction, updateFilters } from '../actions/filters'
+import { IToggleAction, updateFilters } from '../actions'
 import { FILTER } from '../actionTypes'
 import { IState } from '../reducers'
 

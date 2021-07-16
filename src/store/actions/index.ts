@@ -9,5 +9,5 @@ export type {
   ITicketsEndFetchAction,
   ITicketsAddAction,
 } from './tickets'
-export { updateFilters } from './filters'
-export type { IUpdateAction } from './filters'
+export { toggleFilter, updateFilters } from './filters'
+export type { IToggleAction, IUpdateAction } from './filters'
