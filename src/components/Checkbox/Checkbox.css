@@ -2,6 +2,8 @@
   position: relative;
 
   display: flex;
+
+  cursor: pointer;
 }
 
 .checkbox__box {
@@ -15,11 +17,6 @@
 .checkbox__label {
   font-size: 0.8125rem;
   line-height: 1.25rem;
-}
-
-.checkbox__box,
-.checkbox__label {
-  cursor: pointer;
 }
 
 .checkbox__box + .checkbox__label {
