@@ -32,6 +32,7 @@ const ticketsReducer = (
     case TICKETS.FETCH_END:
       return {
         ...state,
+        tickets: action.payload.error ? [] : state.tickets,
         isPending: false,
         error: action.payload.error,
       }
