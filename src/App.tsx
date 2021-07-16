@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { IState, fetchTickets } from './store'
-import { Button, Tabs } from './components'
+import { Button, Tabs, Loader } from './components'
 import { Filter, Ticket } from './page-components'
 import './App.css'
 
 const App = (): JSX.Element => {
-  const tickets = useSelector((state: IState) => state.tickets.tickets)
+  const tickets = useSelector((state: IState) => state.tickets)
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -37,8 +37,13 @@ const App = (): JSX.Element => {
       </aside>
       <main>
         <Tabs tabs={tabs} onSwitch={onSwitchHandler} />
-        {tickets &&
-          tickets.map((ticket) => <Ticket key={ticket.id} {...ticket} />)}
+        {tickets.isPending ? (
+          <Loader />
+        ) : (
+          tickets.tickets.map((ticket) => (
+            <Ticket key={ticket.id} {...ticket} />
+          ))
+        )}
         <Button onClick={() => console.log('Click')}>
           Показать еще 5 билетов!
         </Button>
