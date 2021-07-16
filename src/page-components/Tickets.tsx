@@ -2,10 +2,12 @@ import { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { IState, fetchTickets } from '../store'
 import { Ticket } from '../page-components'
-import { Loader } from '../components'
+import { Loader, Alert } from '../components'
 
 const Tickets = (): JSX.Element => {
-  const { isPending, tickets } = useSelector((state: IState) => state.tickets)
+  const { isPending, tickets, error } = useSelector(
+    (state: IState) => state.tickets
+  )
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -15,6 +17,10 @@ const Tickets = (): JSX.Element => {
 
   if (isPending) {
     return <Loader />
+  }
+
+  if (!isPending && error) {
+    return <Alert>{error}</Alert>
   }
 
   return (
