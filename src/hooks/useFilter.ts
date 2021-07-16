@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { IFilter } from '../interfaces'
-import { toggleFilter } from '../store/actions/filters'
+import { toggleFilter } from '../store/actions'
 import { filtersSelector } from '../store/selectors'
 
 const useFilter = (): [IFilter[], (filter: IFilter) => void] => {
