@@ -17,12 +17,33 @@ const Filter = (): JSX.Element => {
   ])
 
   const onFilterHandler = (title: string): void => {
-    setFilter((filters) => {
-      return filters.map((filter) => ({
+    const filterAll = filter[0]
+
+    if (title === filterAll.title) {
+      if (!filterAll.checked) {
+        return setFilter((filters) =>
+          filters.map((filter) => ({
+            ...filter,
+            checked: true,
+          }))
+        )
+      }
+
+      return setFilter((filters) =>
+        filters.map((filter) => ({
+          ...filter,
+          checked:
+            filter.title === filterAll.title ? !filter.checked : filter.checked,
+        }))
+      )
+    }
+
+    setFilter((filters) =>
+      filters.map((filter) => ({
         ...filter,
         checked: filter.title === title ? !filter.checked : filter.checked,
       }))
-    })
+    )
   }
 
   return (
