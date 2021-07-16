@@ -6,6 +6,7 @@ enum TICKETS {
 }
 
 enum FILTER {
+  TOGGLE = 'FILTER/TOGGLE',
   UPDATE = 'FILTER/UPDATE',
 }
 
