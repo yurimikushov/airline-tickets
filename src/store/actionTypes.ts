@@ -5,4 +5,8 @@ enum TICKETS {
   ADD = 'TICKETS/ADD',
 }
 
-export { TICKETS }
+enum FILTER {
+  UPDATE = 'FILTER/UPDATE',
+}
+
+export { TICKETS, FILTER }
