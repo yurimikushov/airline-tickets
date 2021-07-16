@@ -23,6 +23,10 @@ const Tickets = (): JSX.Element => {
     return <Alert>{error}</Alert>
   }
 
+  if (!isPending && tickets.length === 0) {
+    return <Alert>Нет билетов</Alert>
+  }
+
   return (
     <>
       {tickets.map((ticket) => (
