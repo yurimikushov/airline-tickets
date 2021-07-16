@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchTickets } from '../store'
+import { fetchTickets } from '../store/actions'
 import { ticketsSelector } from '../store/selectors'
 import { Button } from '../components'
 

@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { fetchTickets } from '../store'
+import { fetchTickets } from '../store/actions'
 import { ticketsSelector } from '../store/selectors'
 import { Ticket } from '../page-components'
 import { Loader, Alert } from '../components'
