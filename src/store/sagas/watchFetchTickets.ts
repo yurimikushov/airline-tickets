@@ -1,20 +1,24 @@
 import { takeEvery, call, put } from 'redux-saga/effects'
 import { fetchSearchId, fetchTickets } from '../../api'
 import { ITicket } from '../../interfaces'
-import { addTickets } from '../actions'
-import { TICKETS_FETCH } from '../actionTypes'
+import { addTickets, endFetchTickets, startFetchTickets } from '../actions'
+import { TICKETS } from '../actionTypes'
 
 function* watchFetchTickets() {
-  yield takeEvery(TICKETS_FETCH, fetchTicketsSaga)
+  yield takeEvery(TICKETS.FETCH, handleFetchTickets)
 }
 
-function* fetchTicketsSaga() {
+function* handleFetchTickets() {
   try {
+    yield put(startFetchTickets())
     const searchId: string = yield call(fetchSearchId)
     const tickets: ITicket[] = yield call(fetchTickets, searchId)
     yield put(addTickets(tickets))
-  } catch (err) {
-    console.error(err)
+    yield put(endFetchTickets())
+  } catch {
+    yield put(
+      endFetchTickets('Что-то пошло не так. Попробуйте обновить страницу')
+    )
   }
 }
 
