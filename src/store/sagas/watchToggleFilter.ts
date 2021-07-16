@@ -12,7 +12,7 @@ function* watchToggleFilter() {
 function* handleToggleFilter({ payload }: IToggleAction) {
   const filters: IFilter[] = yield select((state: IState) => state.filters)
 
-  if (isAllFilter(payload.filter.title, filters)) {
+  if (isAllFilter(payload.filter)) {
     yield call(handleToggleAllFilter, payload.filter, filters)
   } else {
     yield call(handleToggleBasicFilter, payload.filter, filters)
@@ -33,19 +33,26 @@ function* handleToggleAllFilter(allFilter: IFilter, filters: IFilter[]) {
       : currentFilter.checked
   }
 
-  const toggleFilters = (filter: IFilter) => ({
+  const toggleCurrentFilter = (filter: IFilter) => ({
     ...filter,
     checked: allFilter ? calcFilterChecked(allFilter, filter) : filter.checked,
   })
 
-  yield put(updateFilters(filters.map(toggleFilters)))
+  yield put(updateFilters(filters.map(toggleCurrentFilter)))
 }
 
 function* handleToggleBasicFilter(currentFilter: IFilter, filters: IFilter[]) {
+  const calcFilterChecked = (filter: IFilter): boolean => {
+    if (filter.value === currentFilter.value) {
+      return !filter.checked
+    }
+
+    return filter.checked
+  }
+
   const toggleCurrentFilter = (filter: IFilter) => ({
     ...filter,
-    checked:
-      filter.title === currentFilter.title ? !filter.checked : filter.checked,
+    checked: calcFilterChecked(filter),
   })
 
   yield put(updateFilters(filters.map(toggleCurrentFilter)))
