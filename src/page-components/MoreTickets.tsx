@@ -1,16 +1,18 @@
-import { useSelector } from 'react-redux'
-import { IState } from '../store'
+import { useDispatch, useSelector } from 'react-redux'
+import { fetchTickets, IState } from '../store'
 import { Button } from '../components'
 
 const MoreTickets = (): JSX.Element => {
   const { tickets } = useSelector((state: IState) => state.tickets)
+
+  const dispatch = useDispatch()
 
   if (tickets.length === 0) {
     return <></>
   }
 
   const onShowMoreTickets = (): void => {
-    console.log('Show more tickets')
+    dispatch(fetchTickets())
   }
 
   return <Button onClick={onShowMoreTickets}>Показать еще 5 билетов!</Button>
