@@ -1,9 +1,10 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { IState, fetchTickets } from '../store'
 import { TicketsLayout } from '../layouts'
 import { Button, Tabs, Loader } from '../components'
 import { Ticket } from '../page-components'
+import { useTicketsSort } from '../hooks'
 
 const TicketsPage = (): JSX.Element => {
   const { isPending, tickets } = useSelector((state: IState) => state.tickets)
@@ -13,23 +14,11 @@ const TicketsPage = (): JSX.Element => {
     dispatch(fetchTickets())
   }, [dispatch])
 
-  const [tabs, setTabs] = useState([
-    { title: 'Самый дешевый', checked: false },
-    { title: 'Самый быстрый', checked: false },
-    { title: 'Оптимальный', checked: true },
-  ])
-
-  const onSwitchHandler = (title: string) =>
-    setTabs((tabs) =>
-      tabs.map((tab) => {
-        tab.checked = tab.title === title
-        return tab
-      })
-    )
+  const [sortTabs, onSortHandler] = useTicketsSort()
 
   return (
     <TicketsLayout>
-      <Tabs tabs={tabs} onSwitch={onSwitchHandler} />
+      <Tabs tabs={sortTabs} onSwitch={onSortHandler} />
       {isPending ? (
         <Loader />
       ) : (
