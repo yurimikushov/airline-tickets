@@ -1,16 +1,17 @@
+import { IFilter } from '../../../interfaces'
 import { FILTER } from '../../actionTypes'
 
 interface IToggleAction {
   type: FILTER.TOGGLE
   payload: {
-    title: string
+    filter: IFilter
   }
 }
 
-const toggleFilter = (title: string): IToggleAction => ({
+const toggleFilter = (filter: IFilter): IToggleAction => ({
   type: FILTER.TOGGLE,
   payload: {
-    title,
+    filter,
   },
 })
 

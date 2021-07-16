@@ -9,13 +9,13 @@ const Filter = (): JSX.Element => {
     <Card>
       <div className='filter'>
         <div className='filter__title'>Количество пересадок</div>
-        {filters.map(({ title, checked }) => (
+        {filters.map((filter) => (
           <Checkbox
-            key={title}
+            key={filter.title}
             className='filter__item'
-            title={title}
-            checked={checked}
-            onChange={() => updateFilter(title)}
+            title={filter.title}
+            checked={filter.checked}
+            onChange={() => updateFilter(filter)}
           />
         ))}
       </div>
