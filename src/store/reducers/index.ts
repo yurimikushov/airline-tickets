@@ -1,12 +1,11 @@
 import { combineReducers } from 'redux'
-import { ITicket } from '../../interfaces'
-import { ticketsReducer } from './tickets'
+import { ticketsReducer, ITicketsState } from './tickets'
 
 interface IState {
-  tickets: ITicket[]
+  tickets: ITicketsState
 }
 
-const rootReducer = combineReducers<IState>({
+const rootReducer = combineReducers({
   tickets: ticketsReducer,
 })
 

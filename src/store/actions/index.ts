@@ -1,3 +1,11 @@
-export { fetchTickets } from './fetchTickets'
-export { addTickets } from './addTickets'
-export type { IAddTicketsAction } from './addTickets'
+export {
+  fetchTickets,
+  startFetchTickets,
+  endFetchTickets,
+  addTickets,
+} from './tickets'
+export type {
+  ITicketsStartFetchAction,
+  ITicketsEndFetchAction,
+  ITicketsAddAction,
+} from './tickets'

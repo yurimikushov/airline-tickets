@@ -6,7 +6,7 @@ import { Filter, Ticket } from './page-components'
 import './App.css'
 
 const App = (): JSX.Element => {
-  const tickets = useSelector((state: IState) => state.tickets)
+  const tickets = useSelector((state: IState) => state.tickets.tickets)
   const dispatch = useDispatch()
 
   useEffect(() => {
