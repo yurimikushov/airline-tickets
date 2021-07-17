@@ -11,5 +11,5 @@ export type {
 } from './tickets'
 export { toggleFilter, updateFilters } from './filters'
 export type { IToggleFilterAction, IUpdateFiltersAction } from './filters'
-export { updateSort } from './sort'
-export type { IUpdateSortAction } from './sort'
+export { switchSort, updateSort } from './sort'
+export type { ISwitchSortAction, IUpdateSortAction } from './sort'

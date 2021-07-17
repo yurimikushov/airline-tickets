@@ -11,7 +11,7 @@ enum FILTER {
 }
 
 enum SORT {
-  TOGGLE = 'SORT/TOGGLE',
+  SWITCH = 'SORT/SWITCH',
   UPDATE = 'SORT/UPDATE',
 }
 
