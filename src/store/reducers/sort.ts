@@ -1,12 +1,12 @@
+import { SORT as cSORT } from '../../constants'
 import { ISort } from '../../interfaces'
-import { SORT as eSORT } from '../../enums'
 import { IUpdateSortAction } from '../actions'
 import { SORT as aSORT } from '../actionTypes'
 
 const initialState: ISort[] = [
-  { title: eSORT.CHEEP, checked: false },
-  { title: eSORT.FAST, checked: false },
-  { title: eSORT.OPTIMAL, checked: true },
+  { title: cSORT.CHEEP, checked: false },
+  { title: cSORT.FAST, checked: false },
+  { title: cSORT.OPTIMAL, checked: true },
 ]
 
 const sortReducer = (
