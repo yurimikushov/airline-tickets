@@ -13,7 +13,7 @@ function* handleSwitchSort({ payload }: ISwitchSortAction) {
 
   const switchCurrentSort = (sort: ISort): ISort => ({
     ...sort,
-    checked: sort.title === payload.sort,
+    checked: sort.title === payload.sort.title,
   })
 
   yield put(updateSort(sort.map(switchCurrentSort)))

@@ -10,12 +10,12 @@ const Tabs = ({
   ...props
 }: TabsProps): JSX.Element => (
   <div className={cn(className, 'tabs')} {...props}>
-    {tabs.map(({ title, checked }) => (
+    {tabs.map((tab) => (
       <Tab
-        key={title}
-        title={title}
-        checked={checked}
-        onSwitch={() => onSwitch(title)}
+        key={tab.title}
+        title={tab.title}
+        checked={tab.checked}
+        onSwitch={() => onSwitch(tab)}
       />
     ))}
   </div>
