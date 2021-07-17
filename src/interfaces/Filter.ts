@@ -1,6 +1,6 @@
 interface IFilter {
   title: string
-  value: number
+  stops: number
   checked: boolean
 }
 

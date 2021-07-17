@@ -34,7 +34,7 @@ function* handleToggleBasicFilter(currentFilter: IFilter, filters: IFilter[]) {
       return false
     }
 
-    if (filter.value === currentFilter.value) {
+    if (filter.stops === currentFilter.stops) {
       return !filter.checked
     }
 
