@@ -9,7 +9,7 @@ const filterTickets = (tickets: ITicket[], filters: IFilter[]): ITicket[] => {
       }
 
       for (const segment of ticket.segments) {
-        if (segment.stops.length === filter.value) {
+        if (segment.stops.length === filter.stops) {
           return true
         }
       }

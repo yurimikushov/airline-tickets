@@ -4,11 +4,11 @@ import { IUpdateFiltersAction } from '../actions'
 import { FILTER as aFILTER } from '../actionTypes'
 
 const initialState: IFilter[] = [
-  { title: eFILTER.ALL, value: -1, checked: false },
-  { title: eFILTER.ZERO, value: 0, checked: true },
-  { title: eFILTER.ONE, value: 1, checked: false },
-  { title: eFILTER.TWO, value: 2, checked: false },
-  { title: eFILTER.THREE, value: 3, checked: false },
+  { title: eFILTER.ALL, stops: -1, checked: false },
+  { title: eFILTER.ZERO, stops: 0, checked: true },
+  { title: eFILTER.ONE, stops: 1, checked: false },
+  { title: eFILTER.TWO, stops: 2, checked: false },
+  { title: eFILTER.THREE, stops: 3, checked: false },
 ]
 
 const filtersReducer = (
