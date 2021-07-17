@@ -10,6 +10,6 @@ export type {
   ITicketsAddAction,
 } from './tickets'
 export { toggleFilter, updateFilters } from './filters'
-export type { IToggleAction, IUpdateAction } from './filters'
+export type { IToggleFilterAction, IUpdateFiltersAction } from './filters'
 export { updateSort } from './sort'
 export type { IUpdateSortAction } from './sort'

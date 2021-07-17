@@ -1,5 +1,5 @@
 import { IFilter } from '../../interfaces'
-import { IUpdateAction } from '../actions'
+import { IUpdateFiltersAction } from '../actions'
 import { FILTER } from '../actionTypes'
 
 const initialState: IFilter[] = [
@@ -12,7 +12,7 @@ const initialState: IFilter[] = [
 
 const filtersReducer = (
   state: IFilter[] = initialState,
-  action: IUpdateAction
+  action: IUpdateFiltersAction
 ) => {
   switch (action.type) {
     case FILTER.UPDATE:

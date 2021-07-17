@@ -1,7 +1,7 @@
 import { call, put, select, takeEvery } from 'redux-saga/effects'
 import { IFilter } from '../../interfaces'
 import { isAllBasicFiltersChecked, isAllFilter } from '../../utils'
-import { IToggleAction, updateFilters } from '../actions'
+import { IToggleFilterAction, updateFilters } from '../actions'
 import { FILTER } from '../actionTypes'
 import { IState } from '../reducers'
 
@@ -9,7 +9,7 @@ function* watchToggleFilter() {
   yield takeEvery(FILTER.TOGGLE, handleToggleFilter)
 }
 
-function* handleToggleFilter({ payload }: IToggleAction) {
+function* handleToggleFilter({ payload }: IToggleFilterAction) {
   const filters: IFilter[] = yield select((state: IState) => state.filters)
 
   if (isAllFilter(payload.filter)) {
