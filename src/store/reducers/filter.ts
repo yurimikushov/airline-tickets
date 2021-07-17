@@ -23,4 +23,3 @@ const filtersReducer = (
 }
 
 export { filtersReducer }
-export type { IFilter }

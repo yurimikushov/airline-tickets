@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux'
-import { ISort } from '../../interfaces'
+import { IFilter, ISort } from '../../interfaces'
 import { ticketsReducer, ITicketsState } from './tickets'
-import { filtersReducer, IFilter } from './filter'
+import { filtersReducer } from './filter'
 import { sortReducer } from './sort'
 
 interface IState {
