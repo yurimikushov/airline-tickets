@@ -1,9 +1,9 @@
 import { TicketsLayout } from '../layouts'
-import { MoreTickets, SortTickets, Tickets } from '../page-components'
+import { MoreTickets, Sort, Tickets } from '../page-components'
 
 const TicketsPage = (): JSX.Element => (
   <TicketsLayout>
-    <SortTickets />
+    <Sort />
     <Tickets />
     <MoreTickets />
   </TicketsLayout>
