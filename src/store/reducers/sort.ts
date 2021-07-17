@@ -1,11 +1,12 @@
 import { ISort } from '../../interfaces'
+import { SORT as eSORT } from '../../enums'
 import { IUpdateSortAction } from '../actions'
-import { SORT } from '../actionTypes'
+import { SORT as aSORT } from '../actionTypes'
 
 const initialState: ISort[] = [
-  { title: 'Самый дешевый', checked: false },
-  { title: 'Самый быстрый', checked: false },
-  { title: 'Оптимальный', checked: true },
+  { title: eSORT.CHEEP, checked: false },
+  { title: eSORT.FAST, checked: false },
+  { title: eSORT.OPTIMAL, checked: true },
 ]
 
 const sortReducer = (
@@ -13,7 +14,7 @@ const sortReducer = (
   action: IUpdateSortAction
 ) => {
   switch (action.type) {
-    case SORT.UPDATE:
+    case aSORT.UPDATE:
       return action.payload.sort
     default:
       return state
