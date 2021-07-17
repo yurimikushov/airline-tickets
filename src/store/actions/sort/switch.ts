@@ -1,13 +1,14 @@
+import { ISort } from '../../../interfaces'
 import { SORT } from '../../actionTypes'
 
 interface ISwitchSortAction {
   type: SORT.SWITCH
   payload: {
-    sort: string
+    sort: ISort
   }
 }
 
-const switchSort = (sort: string): ISwitchSortAction => ({
+const switchSort = (sort: ISort): ISwitchSortAction => ({
   type: SORT.SWITCH,
   payload: {
     sort,

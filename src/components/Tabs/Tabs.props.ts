@@ -7,7 +7,7 @@ interface Tab {
 
 interface TabsProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
   tabs: Tab[]
-  onSwitch: (title: string) => void
+  onSwitch: (tab: Tab) => void
 }
 
 export type { TabsProps }
