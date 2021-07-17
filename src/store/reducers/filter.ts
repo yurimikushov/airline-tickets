@@ -1,13 +1,14 @@
 import { IFilter } from '../../interfaces'
+import { FILTER as eFILTER } from '../../enums'
 import { IUpdateFiltersAction } from '../actions'
-import { FILTER } from '../actionTypes'
+import { FILTER as aFILTER } from '../actionTypes'
 
 const initialState: IFilter[] = [
-  { title: 'Все', value: -1, checked: false },
-  { title: 'Без пересадок', value: 0, checked: true },
-  { title: '1 пересадка', value: 1, checked: false },
-  { title: '2 пересадки', value: 2, checked: false },
-  { title: '3 пересадки', value: 3, checked: false },
+  { title: eFILTER.ALL, value: -1, checked: false },
+  { title: eFILTER.ZERO, value: 0, checked: true },
+  { title: eFILTER.ONE, value: 1, checked: false },
+  { title: eFILTER.TWO, value: 2, checked: false },
+  { title: eFILTER.THREE, value: 3, checked: false },
 ]
 
 const filtersReducer = (
@@ -15,7 +16,7 @@ const filtersReducer = (
   action: IUpdateFiltersAction
 ) => {
   switch (action.type) {
-    case FILTER.UPDATE:
+    case aFILTER.UPDATE:
       return action.payload.filters
     default:
       return state
