@@ -1,14 +1,14 @@
 import { IFilter } from '../../../interfaces'
 import { FILTER } from '../../actionTypes'
 
-interface IUpdateAction {
+interface IUpdateFiltersAction {
   type: FILTER.UPDATE
   payload: {
     filters: IFilter[]
   }
 }
 
-const updateFilters = (filters: IFilter[]): IUpdateAction => ({
+const updateFilters = (filters: IFilter[]): IUpdateFiltersAction => ({
   type: FILTER.UPDATE,
   payload: {
     filters,
@@ -16,4 +16,4 @@ const updateFilters = (filters: IFilter[]): IUpdateAction => ({
 })
 
 export { updateFilters }
-export type { IUpdateAction }
+export type { IUpdateFiltersAction }
