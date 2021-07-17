@@ -1,24 +1,22 @@
-import { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { ISort } from '../interfaces'
+import { updateSort } from '../store/actions'
+import { sortSelector } from '../store/selectors'
 
-interface ITicketSort {
-  title: string
-  checked: boolean
-}
+const useSort = (): [ISort[], (title: string) => void] => {
+  const sort = useSelector(sortSelector)
+  const dispatch = useDispatch()
 
-const useSort = (): [ITicketSort[], (title: string) => void] => {
-  const [sort, setSort] = useState([
-    { title: 'Самый дешевый', checked: false },
-    { title: 'Самый быстрый', checked: false },
-    { title: 'Оптимальный', checked: true },
-  ])
+  const update = (sort: ISort[]) => dispatch(updateSort(sort))
 
-  const sortHandler = (title: string): void =>
-    setSort((sort) =>
+  const sortHandler = (title: string): void => {
+    update(
       sort.map((sort) => {
         sort.checked = sort.title === title
         return sort
       })
     )
+  }
 
   return [sort, sortHandler]
 }

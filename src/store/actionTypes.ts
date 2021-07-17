@@ -10,4 +10,9 @@ enum FILTER {
   UPDATE = 'FILTER/UPDATE',
 }
 
-export { TICKETS, FILTER }
+enum SORT {
+  TOGGLE = 'SORT/TOGGLE',
+  UPDATE = 'SORT/UPDATE',
+}
+
+export { TICKETS, FILTER, SORT }
