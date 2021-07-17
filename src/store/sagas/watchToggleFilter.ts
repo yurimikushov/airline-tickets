@@ -49,10 +49,10 @@ function* handleToggleBasicFilter(currentFilter: IFilter, filters: IFilter[]) {
   let toggledFilters = filters.map(toggleCurrentFilter)
 
   if (isAllBasicFiltersChecked(toggledFilters)) {
-    toggledFilters = toggledFilters.map((filter) => {
-      filter.checked = true
-      return filter
-    })
+    toggledFilters = toggledFilters.map((filter) => ({
+      ...filter,
+      checked: true,
+    }))
   }
 
   yield put(updateFilters(toggledFilters))
