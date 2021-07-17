@@ -3,14 +3,14 @@ import { IFilter } from '../../interfaces'
 import { isAllBasicFiltersChecked, isAllFilter } from '../../utils'
 import { IToggleFilterAction, updateFilters } from '../actions'
 import { FILTER } from '../actionTypes'
-import { IState } from '../reducers'
+import { filtersSelector } from '../selectors'
 
 function* watchToggleFilter() {
   yield takeEvery(FILTER.TOGGLE, handleToggleFilter)
 }
 
 function* handleToggleFilter({ payload }: IToggleFilterAction) {
-  const filters: IFilter[] = yield select((state: IState) => state.filters)
+  const filters: IFilter[] = yield select(filtersSelector)
 
   if (isAllFilter(payload.filter)) {
     yield call(handleToggleAllFilter, payload.filter, filters)
