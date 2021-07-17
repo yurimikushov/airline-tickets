@@ -11,3 +11,5 @@ export type {
 } from './tickets'
 export { toggleFilter, updateFilters } from './filters'
 export type { IToggleAction, IUpdateAction } from './filters'
+export { updateSort } from './sort'
+export type { IUpdateSortAction } from './sort'
