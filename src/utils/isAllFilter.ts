@@ -1,7 +1,8 @@
 import { IFilter } from '../interfaces'
+import { FILTER } from '../enums'
 
 const isAllFilter = (filter: IFilter): boolean => {
-  return filter.value === -1
+  return filter.title === FILTER.ALL
 }
 
 export { isAllFilter }
