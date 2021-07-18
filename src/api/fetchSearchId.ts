@@ -1,3 +1,5 @@
+import { IFetchSearchIdResponse } from '../interfaces'
+
 const fetchSearchId = async (): Promise<string> => {
   const res = await fetch(`${process.env.REACT_APP_API}/search`)
 
@@ -5,7 +7,9 @@ const fetchSearchId = async (): Promise<string> => {
     throw new Error(res.statusText)
   }
 
-  return ((await res.json()) as { searchId: string }).searchId
+  const { searchId }: IFetchSearchIdResponse = await res.json()
+
+  return searchId
 }
 
 export { fetchSearchId }

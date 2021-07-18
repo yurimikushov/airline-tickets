@@ -1,11 +1,6 @@
 import { nanoid } from 'nanoid'
 import { MAX_NUM_OF_TRY_FETCHING } from '../constants'
-import { ITicket } from '../interfaces'
-
-interface IFetchTicketsResponse {
-  tickets: ITicket[]
-  stop: boolean
-}
+import { IFetchTicketsResponse, ITicket } from '../interfaces'
 
 const fetchTickets = async (searchId: string) => {
   return await tryFetchTickets(searchId)
