@@ -20,7 +20,7 @@
   --font-size: 1em;
 }
 
-body {
+html {
   color: var(--color-black);
   background-color: var(--color-gray-1);
 
