@@ -15,4 +15,8 @@ enum SORT {
   UPDATE = 'SORT/UPDATE',
 }
 
-export { TICKETS, FILTER, SORT }
+enum SEARCH_ID {
+  SET = 'SEARCH_ID/SET',
+}
+
+export { TICKETS, FILTER, SORT, SEARCH_ID }
