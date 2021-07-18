@@ -20,6 +20,7 @@ function* handleFetchTickets() {
 
     const searchId: string = yield call(getSearchId)
     const tickets: ITicket[] = yield call(fetchTickets, searchId)
+
     yield put(addTickets(tickets))
     yield put(endFetchTickets())
   } catch {
