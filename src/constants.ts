@@ -1,3 +1,5 @@
+const TICKETS_BATCH_SIZE = 5
+
 const MAX_NUM_OF_TRY_FETCHING = 3
 
 const FILTER = {
@@ -14,4 +16,4 @@ const SORT = {
   OPTIMAL: 'Оптимальный',
 }
 
-export { MAX_NUM_OF_TRY_FETCHING, FILTER, SORT }
+export { TICKETS_BATCH_SIZE, MAX_NUM_OF_TRY_FETCHING, FILTER, SORT }

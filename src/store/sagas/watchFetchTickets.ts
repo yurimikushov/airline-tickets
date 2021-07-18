@@ -1,6 +1,7 @@
 import { takeEvery, call, put, select } from 'redux-saga/effects'
 import { fetchSearchId, fetchTickets } from '../../api'
-import { IFetchTicketsResponse } from '../../interfaces'
+import { IFetchTicketsResponse, IFilter, ITicket } from '../../interfaces'
+import { filterAndSliceTickets } from '../../utils'
 import {
   addTickets,
   endFetchTickets,
@@ -8,7 +9,7 @@ import {
   startFetchTickets,
 } from '../actions'
 import { TICKETS } from '../actionTypes'
-import { searchIdSelector } from '../selectors'
+import { checkedFiltersSelector, searchIdSelector } from '../selectors'
 
 function* watchFetchTickets() {
   yield takeEvery(TICKETS.FETCH, handleFetchTickets)
@@ -20,8 +21,17 @@ function* handleFetchTickets() {
 
     const searchId: string = yield call(getSearchId)
     const tickets: IFetchTicketsResponse = yield call(fetchTickets, searchId)
+    const filteredTickets: ITicket[] = yield call(
+      filterTickets,
+      tickets.tickets
+    )
 
-    yield put(addTickets(tickets))
+    yield put(
+      addTickets({
+        ...tickets,
+        tickets: filteredTickets,
+      })
+    )
     yield put(endFetchTickets())
   } catch {
     yield put(
@@ -39,6 +49,12 @@ function* getSearchId() {
   }
 
   return searchId
+}
+
+function* filterTickets(tickets: ITicket[]) {
+  const filters: IFilter[] = yield select(checkedFiltersSelector)
+
+  return filterAndSliceTickets(tickets, filters)
 }
 
 export { watchFetchTickets }

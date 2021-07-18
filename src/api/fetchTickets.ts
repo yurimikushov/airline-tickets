@@ -38,7 +38,7 @@ const handleFetchTickets = async (
 
   return {
     ...tickets,
-    tickets: addUniqueId(tickets.tickets.slice(0, 6)),
+    tickets: addUniqueId(tickets.tickets),
   }
 }
 
