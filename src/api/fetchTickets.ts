@@ -1,6 +1,6 @@
-import { nanoid } from 'nanoid'
 import { MAX_NUM_OF_TRY_FETCHING } from '../constants'
-import { IFetchTicketsResponse, ITicket } from '../interfaces'
+import { IFetchTicketsResponse } from '../interfaces'
+import { addUniqueId } from '../utils'
 
 const fetchTickets = async (
   searchId: string
@@ -38,19 +38,8 @@ const handleFetchTickets = async (
 
   return {
     ...tickets,
-    tickets: processTickets(tickets.tickets),
+    tickets: addUniqueId(tickets.tickets.slice(0, 6)),
   }
-}
-
-const processTickets = (tickets: ITicket[]) => {
-  return tickets.slice(0, 1).map((ticket) => ({
-    ...ticket,
-    id: nanoid(),
-    segments: ticket.segments.map((segment) => ({
-      ...segment,
-      id: nanoid(),
-    })),
-  }))
 }
 
 export { fetchTickets }
