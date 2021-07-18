@@ -1,4 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux'
+import { TICKETS_BATCH_SIZE } from '../constants'
 import { fetchTickets } from '../store/actions'
 import { ticketsSelector } from '../store/selectors'
 import { Button } from '../components'
@@ -18,7 +19,7 @@ const MoreTickets = (): JSX.Element => {
 
   return (
     <Button onClick={onShowMoreTickets} pending={isPending}>
-      Показать еще 5 билетов!
+      {`Показать еще ${TICKETS_BATCH_SIZE} билетов!`}
     </Button>
   )
 }
