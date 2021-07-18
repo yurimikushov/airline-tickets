@@ -1,4 +1,4 @@
-import { ITicket } from '../interfaces'
+import { ITicket } from '../../interfaces'
 import { calcTotalFlightDuration } from './calcFlightDuration'
 
 const calcPricePerMinuteFlight = (ticket: ITicket): number => {
