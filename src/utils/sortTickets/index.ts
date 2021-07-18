@@ -1,5 +1,5 @@
-import { SORT } from '../constants'
-import { ISort, ITicket } from '../interfaces'
+import { SORT } from '../../constants'
+import { ISort, ITicket } from '../../interfaces'
 import { calcTotalFlightDuration } from './calcFlightDuration'
 import { calcPricePerMinuteFlight } from './calcPricePerMinuteFlight'
 

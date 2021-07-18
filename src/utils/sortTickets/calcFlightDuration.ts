@@ -1,4 +1,4 @@
-import { ITicket } from '../interfaces'
+import { ITicket } from '../../interfaces'
 
 const calcTotalFlightDuration = (ticket: ITicket): number => {
   return ticket.segments.reduce((totalDuration, { duration }) => {
