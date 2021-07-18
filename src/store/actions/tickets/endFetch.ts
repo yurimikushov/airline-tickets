@@ -3,7 +3,7 @@ import { TICKETS } from '../../actionTypes'
 interface ITicketsEndFetchAction {
   type: TICKETS.FETCH_END
   payload: {
-    error?: string
+    error: string
   }
 }
 

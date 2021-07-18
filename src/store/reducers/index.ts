@@ -12,7 +12,7 @@ interface IState {
   searchId: string
 }
 
-const rootReducer = combineReducers({
+const rootReducer = combineReducers<IState>({
   tickets: ticketsReducer,
   filters: filtersReducer,
   sort: sortReducer,
