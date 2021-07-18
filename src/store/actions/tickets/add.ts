@@ -1,18 +1,14 @@
-import { ITicket } from '../../../interfaces'
+import { IFetchTicketsResponse } from '../../../interfaces'
 import { TICKETS } from '../../actionTypes'
 
 interface ITicketsAddAction {
   type: TICKETS.ADD
-  payload: {
-    tickets: ITicket[]
-  }
+  payload: IFetchTicketsResponse
 }
 
-const addTickets = (tickets: ITicket[]): ITicketsAddAction => ({
+const addTickets = (tickets: IFetchTicketsResponse): ITicketsAddAction => ({
   type: TICKETS.ADD,
-  payload: {
-    tickets,
-  },
+  payload: tickets,
 })
 
 export { addTickets }

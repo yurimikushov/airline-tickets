@@ -10,12 +10,14 @@ interface ITicketsState {
   tickets: ITicket[]
   isPending: boolean
   error: string
+  stop: boolean
 }
 
 const initialState: ITicketsState = {
   tickets: [],
   isPending: false,
   error: '',
+  stop: false
 }
 
 const ticketsReducer = (
@@ -40,6 +42,7 @@ const ticketsReducer = (
       return {
         ...state,
         tickets: [...state.tickets, ...action.payload.tickets],
+        stop: action.payload.stop
       }
     default:
       return state

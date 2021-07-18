@@ -1,6 +1,6 @@
 import { takeEvery, call, put, select } from 'redux-saga/effects'
 import { fetchSearchId, fetchTickets } from '../../api'
-import { ITicket } from '../../interfaces'
+import { IFetchTicketsResponse } from '../../interfaces'
 import {
   addTickets,
   endFetchTickets,
@@ -19,7 +19,7 @@ function* handleFetchTickets() {
     yield put(startFetchTickets())
 
     const searchId: string = yield call(getSearchId)
-    const tickets: ITicket[] = yield call(fetchTickets, searchId)
+    const tickets: IFetchTicketsResponse = yield call(fetchTickets, searchId)
 
     yield put(addTickets(tickets))
     yield put(endFetchTickets())
