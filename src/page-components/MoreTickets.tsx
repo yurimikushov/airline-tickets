@@ -4,11 +4,11 @@ import { ticketsSelector } from '../store/selectors'
 import { Button } from '../components'
 
 const MoreTickets = (): JSX.Element => {
-  const { tickets, isPending } = useSelector(ticketsSelector)
+  const { isPending, stop } = useSelector(ticketsSelector)
 
   const dispatch = useDispatch()
 
-  if (tickets.length === 0) {
+  if (stop) {
     return <></>
   }
 
