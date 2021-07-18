@@ -1,3 +1,5 @@
+const MAX_NUM_OF_TRY_FETCHING = 3
+
 const FILTER = {
   ALL: 'Все',
   ZERO: 'Без пересадок',
@@ -12,4 +14,4 @@ const SORT = {
   OPTIMAL: 'Оптимальный',
 }
 
-export { FILTER, SORT }
+export { MAX_NUM_OF_TRY_FETCHING, FILTER, SORT }
