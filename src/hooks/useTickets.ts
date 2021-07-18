@@ -4,7 +4,7 @@ import { IFilter, ISort, ITicket } from '../interfaces'
 import { ITicketsState } from '../store/reducers'
 import { filtersSelector, ticketsSelector } from '../store/selectors'
 import { checkedSortSelector } from '../store/selectors'
-import { filterTickets } from '../utils'
+import { calcTotalFlightDuration, filterTickets } from '../utils'
 
 const sortTickets = (tickets: ITicket[], sort: ISort): ITicket[] => {
   switch (sort.title) {
@@ -21,7 +21,20 @@ const sortTickets = (tickets: ITicket[], sort: ISort): ITicket[] => {
         return 1
       })
     case SORT.FAST:
-      return tickets
+      return tickets.sort((a, b): number => {
+        const aDuration = calcTotalFlightDuration(a)
+        const bDuration = calcTotalFlightDuration(b)
+
+        if (aDuration < bDuration) {
+          return -1
+        }
+
+        if (aDuration === bDuration) {
+          return 0
+        }
+
+        return 1
+      })
     case SORT.OPTIMAL:
       return tickets
     default:
@@ -41,7 +54,7 @@ const useTickets = (): ITicketsState => {
   )
 
   const checkedSort: ISort = useSelector(checkedSortSelector)
-  
+
   return {
     ...tickets,
     tickets: sortTickets(filteredTickets, checkedSort),
