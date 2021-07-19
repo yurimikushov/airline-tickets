@@ -24,7 +24,7 @@ function* handleFetchTickets() {
     const tickets: IFetchTicketsResponse = yield call(fetchTicketsApi, searchId)
 
     const filteredTickets: ITicket[] = yield call(
-      filterTickets,
+      filterAndSliceNeedlessTickets,
       tickets.tickets
     )
 
@@ -64,7 +64,7 @@ function* fetchTicketsApi(searchId: string) {
   throw new Error('Не удалось выполнить запрос')
 }
 
-function* filterTickets(tickets: ITicket[]) {
+function* filterAndSliceNeedlessTickets(tickets: ITicket[]) {
   const filters: IFilter[] = yield select(checkedFiltersSelector)
 
   return filterAndSliceTickets(tickets, filters)
