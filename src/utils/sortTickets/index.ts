@@ -48,11 +48,11 @@ const sortByOptimal = (a: ITicket, b: ITicket): number => {
 const sortTickets = (tickets: ITicket[], sort: ISort): ITicket[] => {
   switch (sort.title) {
     case SORT.CHEEP:
-      return tickets.sort(sortByPrice)
+      return [...tickets].sort(sortByPrice)
     case SORT.FAST:
-      return tickets.sort(sortByFlightDuration)
+      return [...tickets].sort(sortByFlightDuration)
     case SORT.OPTIMAL:
-      return tickets.sort(sortByOptimal)
+      return [...tickets].sort(sortByOptimal)
     default:
       return tickets
   }
