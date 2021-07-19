@@ -9,9 +9,15 @@ const addMinutes = (date: Date, minutes: number): Date => {
   return new Date(new Date(date).getTime() + minutes * 60 * 1000)
 }
 
-const flightDuration = (start: string, duration: number): string => {
-  const startTime = extractTime(new Date(start))
-  const endTime = extractTime(addMinutes(new Date(start), duration))
+const flightDuration = (start: string, minutes: number): string => {
+  const startDate = new Date(start)
+
+  if (startDate.toString() === 'Invalid Date') {
+    throw new Error('Passed invalid start date')
+  }
+
+  const startTime = extractTime(startDate)
+  const endTime = extractTime(addMinutes(startDate  , minutes))
 
   return `${startTime} - ${endTime}`
 }
