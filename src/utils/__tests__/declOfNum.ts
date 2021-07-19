@@ -1,0 +1,53 @@
+import { declOfNum } from '../declOfNum'
+
+let titles: [string, string, string] = ['пересадка', 'пересадки', 'пересадок']
+
+test('should return `пересадки`', () => {
+  expect(declOfNum(2, titles)).toBe('пересадки')
+  expect(declOfNum(3, titles)).toBe('пересадки')
+  expect(declOfNum(4, titles)).toBe('пересадки')
+  expect(declOfNum(22, titles)).toBe('пересадки')
+  expect(declOfNum(23, titles)).toBe('пересадки')
+  expect(declOfNum(24, titles)).toBe('пересадки')
+})
+
+test('should return `пересадка`', () => {
+  expect(declOfNum(1, titles)).toBe('пересадка')
+  expect(declOfNum(21, titles)).toBe('пересадка')
+  expect(declOfNum(31, titles)).toBe('пересадка')
+  expect(declOfNum(41, titles)).toBe('пересадка')
+  expect(declOfNum(51, titles)).toBe('пересадка')
+  expect(declOfNum(91, titles)).toBe('пересадка')
+  expect(declOfNum(101, titles)).toBe('пересадка')
+  expect(declOfNum(121, titles)).toBe('пересадка')
+})
+
+test('should return `пересадок`', () => {
+  expect(declOfNum(0, titles)).toBe('пересадок')
+  expect(declOfNum(5, titles)).toBe('пересадок')
+  expect(declOfNum(6, titles)).toBe('пересадок')
+  expect(declOfNum(7, titles)).toBe('пересадок')
+  expect(declOfNum(8, titles)).toBe('пересадок')
+  expect(declOfNum(9, titles)).toBe('пересадок')
+  expect(declOfNum(10, titles)).toBe('пересадок')
+  expect(declOfNum(11, titles)).toBe('пересадок')
+  expect(declOfNum(12, titles)).toBe('пересадок')
+  expect(declOfNum(13, titles)).toBe('пересадок')
+  expect(declOfNum(14, titles)).toBe('пересадок')
+  expect(declOfNum(15, titles)).toBe('пересадок')
+  expect(declOfNum(16, titles)).toBe('пересадок')
+  expect(declOfNum(17, titles)).toBe('пересадок')
+  expect(declOfNum(18, titles)).toBe('пересадок')
+  expect(declOfNum(19, titles)).toBe('пересадок')
+  expect(declOfNum(20, titles)).toBe('пересадок')
+  expect(declOfNum(25, titles)).toBe('пересадок')
+  expect(declOfNum(26, titles)).toBe('пересадок')
+  expect(declOfNum(27, titles)).toBe('пересадок')
+  expect(declOfNum(28, titles)).toBe('пересадок')
+  expect(declOfNum(29, titles)).toBe('пересадок')
+  expect(declOfNum(30, titles)).toBe('пересадок')
+  expect(declOfNum(50, titles)).toBe('пересадок')
+  expect(declOfNum(100, titles)).toBe('пересадок')
+  expect(declOfNum(111, titles)).toBe('пересадок')
+  expect(declOfNum(1000, titles)).toBe('пересадок')
+})
