@@ -7,7 +7,7 @@ const sortSelector = (state: IState): ISort[] => state.sort
 const checkedSortSelector = (state: IState): ISort => {
   return (
     state.sort.find((sort) => sort.checked) || {
-      title: SORT.CHEEP,
+      title: SORT.PRICE,
       checked: true,
     }
   )

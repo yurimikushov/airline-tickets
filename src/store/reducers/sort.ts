@@ -4,8 +4,8 @@ import { IUpdateSortAction } from '../actions'
 import { SORT as aSORT } from '../actionTypes'
 
 const initialState: ISort[] = [
-  { title: cSORT.CHEEP, checked: false },
-  { title: cSORT.FAST, checked: false },
+  { title: cSORT.PRICE, checked: false },
+  { title: cSORT.FLIGHT_DURATION, checked: false },
   { title: cSORT.OPTIMAL, checked: true },
 ]
 

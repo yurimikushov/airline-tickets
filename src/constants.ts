@@ -11,8 +11,8 @@ const FILTER = {
 }
 
 const SORT = {
-  CHEEP: 'Самый дешевый',
-  FAST: 'Самый быстрый',
+  PRICE: 'Самый дешевый',
+  FLIGHT_DURATION: 'Самый быстрый',
   OPTIMAL: 'Оптимальный',
 }
 

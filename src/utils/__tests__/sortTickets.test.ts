@@ -3,12 +3,12 @@ import { ISort, ITicket } from '../../interfaces'
 import { sortTickets } from '../sortTickets'
 
 const SORT_BY_PRICE: ISort = {
-  title: SORT.CHEEP,
+  title: SORT.PRICE,
   checked: true,
 }
 
 const SORT_BY_FLIGHT_DURATION: ISort = {
-  title: SORT.FAST,
+  title: SORT.FLIGHT_DURATION,
   checked: true,
 }
 
