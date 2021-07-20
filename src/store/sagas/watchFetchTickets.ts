@@ -74,4 +74,4 @@ function* filterAndSliceNeedlessTickets(tickets: ITicket[]) {
   return filterAndSliceTickets(tickets, filters)
 }
 
-export { watchFetchTickets }
+export { watchFetchTickets, handleFetchTickets }
