@@ -1,4 +1,4 @@
-import { takeEvery, call, put, select } from 'redux-saga/effects'
+import { takeEvery, call, put, select, retry } from 'redux-saga/effects'
 import { fetchSearchId, fetchTickets } from '../../api'
 import { MAX_NUM_OF_TRY_FETCHING } from '../../constants'
 import { IFetchTicketsResponse, IFilter, ITicket } from '../../interfaces'
@@ -54,14 +54,18 @@ function* getSearchId() {
 }
 
 function* fetchTicketsApi(searchId: string) {
-  for (let tryCounter = 0; tryCounter < MAX_NUM_OF_TRY_FETCHING; tryCounter++) {
-    try {
-      const tickets: IFetchTicketsResponse = yield call(fetchTickets, searchId)
-      return tickets
-    } catch {}
-  }
+  try {
+    const tickets: IFetchTicketsResponse = yield retry(
+      MAX_NUM_OF_TRY_FETCHING,
+      100,
+      fetchTickets,
+      searchId
+    )
 
-  throw new Error('Не удалось выполнить запрос')
+    return tickets
+  } catch {
+    throw new Error('Не удалось выполнить запрос')
+  }
 }
 
 function* filterAndSliceNeedlessTickets(tickets: ITicket[]) {
