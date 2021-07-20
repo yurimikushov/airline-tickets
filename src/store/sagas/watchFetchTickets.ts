@@ -2,7 +2,7 @@ import { takeEvery, call, put, select, retry } from 'redux-saga/effects'
 import { fetchSearchId, fetchTickets } from '../../api'
 import { MAX_NUM_OF_TRY_FETCHING } from '../../constants'
 import { IFetchTicketsResponse, IFilter, ITicket } from '../../interfaces'
-import { filterAndSliceTickets as filterAndSliceNeedlessTickets } from '../../utils'
+import { filterAndSliceNeedlessTickets } from '../../utils'
 import {
   addTickets,
   endFetchTickets,
