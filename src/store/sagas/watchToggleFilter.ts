@@ -58,4 +58,4 @@ function* handleToggleBasicFilter(currentFilter: IFilter, filters: IFilter[]) {
   yield put(updateFilters(toggledFilters))
 }
 
-export { watchToggleFilter }
+export { watchToggleFilter, handleToggleFilter}
