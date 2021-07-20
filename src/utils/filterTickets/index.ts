@@ -1,2 +1,2 @@
-export { filterAndSliceTickets } from './filterAndSliceTickets'
+export { filterAndSliceNeedlessTickets } from './filterAndSliceNeedlessTickets'
 export { filterTickets } from './filterTickets'

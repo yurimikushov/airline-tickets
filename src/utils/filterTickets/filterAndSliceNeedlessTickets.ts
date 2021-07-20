@@ -2,7 +2,7 @@ import { TICKETS_BATCH_SIZE } from '../../constants'
 import { IFilter, ITicket } from '../../interfaces'
 import { isSuitableTicket } from './isSuitableTicket'
 
-const filterAndSliceTickets = (
+const filterAndSliceNeedlessTickets = (
   tickets: ITicket[],
   filters: IFilter[]
 ): ITicket[] => {
@@ -21,4 +21,4 @@ const filterAndSliceTickets = (
   return filteredTickets
 }
 
-export { filterAndSliceTickets }
+export { filterAndSliceNeedlessTickets }
