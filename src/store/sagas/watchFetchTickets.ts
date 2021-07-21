@@ -27,7 +27,8 @@ function* handleFetchTickets() {
     )
 
     const filters: IFilter[] = yield select(checkedFiltersSelector)
-    const filteredTickets: ITicket[] = filterAndSliceNeedlessTickets(
+    const filteredTickets: ITicket[] = yield call(
+      filterAndSliceNeedlessTickets,
       tickets,
       filters
     )
@@ -72,4 +73,4 @@ function* fetchTicketsApi(searchId: string) {
   }
 }
 
-export { watchFetchTickets, handleFetchTickets }
+export { watchFetchTickets, handleFetchTickets, getSearchId, fetchTicketsApi }
